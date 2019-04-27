@@ -1,15 +1,29 @@
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, Text, View,TextInput } from 'react-native';
 
 export default class App extends React.Component {
+
+  state={
+    placeName:''
+  }
+
+  placeNameChangeHandler= val =>{
+    this.setState({
+      placeName:val
+    })
+  }
   render() {
     return (
-      <Header
-      placement="left"
-      leftComponent={{ icon: 'menu', color: '#fff' }}
-      centerComponent={{ text: 'MY TITLE', style: { color: '#fff' } }}
-      rightComponent={{ icon: 'home', color: '#fff' }}
-    />
+      <View style={styles.container}>
+        <Text>ssss</Text>
+
+        <TextInput   
+          style={{width:300,borderColor:"black",borderWidth:1 }}
+          placeholder="awesome place"
+          value={this.state.placeName} 
+          onChangeText={this.placeNameChangeHandler}
+        />     
+      </View>
       
     );
   }
