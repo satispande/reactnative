@@ -34,7 +34,8 @@ export default class App extends React.Component {
   render() {
     const placesOutput=this.state.places.map(
       (place,i)=>(
-        <ListItem key={i} newPlace={place} />
+        <ListItem key={i} newPlace={place} 
+        onItemPressed={()=> alert('Item pressed -ID: '+i)} />
       )
     );
     return (
