@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyleSheet, Text, View,TextInput,Button } from 'react-native';
+import { StyleSheet, Text, View,TextInput,Button,ScrollView} from 'react-native';
 import ListItem from './src/component/ListItem/ListItem';
 
 export default class App extends React.Component {
@@ -39,7 +39,7 @@ export default class App extends React.Component {
       )
     );
     return (
-      <View style={styles.container}>
+      <ScrollView style={styles.container}>
         <View style={styles.inputStyle}>
           <TextInput   
             style={styles.placeInput}
@@ -52,7 +52,7 @@ export default class App extends React.Component {
         <View>
           {placesOutput}
         </View>
-      </View>
+      </ScrollView>
       
     );
   }
@@ -64,8 +64,8 @@ const styles = StyleSheet.create({
     flex: 1,
     padding:20,
     backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'flex-start',
+   // alignItems: 'center',
+   // justifyContent: 'flex-start',
   },
   inputStyle:{
    // flex: 1,
