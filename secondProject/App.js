@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyleSheet, Text, View,TextInput } from 'react-native';
+import { StyleSheet, Text, View,TextInput,Button } from 'react-native';
 
 export default class App extends React.Component {
 
@@ -15,25 +15,42 @@ export default class App extends React.Component {
   render() {
     return (
       <View style={styles.container}>
-        <Text>ssss</Text>
-
-        <TextInput   
-          style={{width:300,borderColor:"black",borderWidth:1 }}
-          placeholder="awesome place"
-          value={this.state.placeName} 
-          onChangeText={this.placeNameChangeHandler}
-        />     
+        <View style={styles.inputStyle}>
+          <TextInput   
+            style={styles.placeInput}
+            placeholder="awesome place"
+            value={this.state.placeName} 
+            onChangeText={this.placeNameChangeHandler}
+          />     
+          <Button title="Add" style={styles.placeButton}/>
+        </View>
       </View>
       
     );
   }
 }
 
+//https://github.com/vhpoet/react-native-styling-cheat-sheet
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+    padding:20,
     backgroundColor: '#fff',
     alignItems: 'center',
-    justifyContent: 'center',
+    justifyContent: 'flex-start',
   },
+  inputStyle:{
+   // flex: 1,
+   width:"100%",
+    flexDirection:"row",
+    justifyContent:"space-between",
+    alignItems:"center"
+  },
+  placeInput:{
+    width:"70%",
+    borderColor:"black",borderWidth:1
+  },
+  placeButton:{
+    width:"30%"
+  }
 });
