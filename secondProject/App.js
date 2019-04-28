@@ -4,7 +4,6 @@ import { StyleSheet, View,TextInput,Button,ScrollView} from 'react-native';
 import PlaceInput from "./src/component/PlaceInput/PlaceInput";
 import PlaceList from "./src/component/PlaceList/PlaceList";
 
-import placeImage from "./assets/food1.jpg"
 
 export default class App extends React.Component {
 
@@ -19,7 +18,9 @@ export default class App extends React.Component {
         places: prevState.places.concat({
           key: Math.random(),
           name: placeName,
-          image:placeImage
+          image: {
+            uri :"http://imshopping.rediff.com/imgshop/100-100/shopping/pixs/32143/s/st-si-001002.jpg"
+          }
         })
       };
     });
